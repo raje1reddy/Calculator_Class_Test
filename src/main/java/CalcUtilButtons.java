@@ -11,12 +11,6 @@ public class CalcUtilButtons {
         driver.get(Url);
     }
     public void MultiplyButton() {
-        //WebDriver driver = new ChromeDriver();
-        // open the browser and go to open www.calculator.net'
-        //driver.get("https://www.calculator.net/");
-
-       // CalculatorSeleniumTest calc = new CalculatorSeleniumTest();
-
         WebElement multiply =  driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[3]/span[4]"));
         multiply.click();
     }
@@ -75,6 +69,10 @@ public class CalcUtilButtons {
     public void addButton() {
         WebElement AddButton = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/span[4]"));
         AddButton.click();
+    }
+
+    public void  close() {
+        driver.close();
     }
 
 }

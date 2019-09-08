@@ -5,19 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class CalculatorSeleniumTest {
-    public static WebDriver  driver;
-   // public static WebDriver getDriver() {
-      //  return driver;
-    //}
     public static void  main(String args[]){
         String baseUrl;
-
-        WebDriver driver = new ChromeDriver();
         // open the browser and go to open www.calculator.net'
-       baseUrl = "https://www.calculator.net/";
-               //driver.get("https://www.calculator.net/");
-        driver.get(baseUrl);
-        //select text box1
+      baseUrl = "https://www.calculator.net/";
         CalcUtilButtons util = new CalcUtilButtons(baseUrl);
         util.oneButton();
         util.MultiplyButton();
@@ -38,31 +29,32 @@ public class CalculatorSeleniumTest {
         util.nineButton();
        String multiplication = util.printText();
        System.out.println("Multiplication Result"+ multiplication);
-       
-        util.zeroButton();
-        util.MultiplyButton();
-        util.zeroButton();
-        util.addButton();
-        util.oneButton();
-        util.addButton();
-        util.twoButton();
-        util.addButton();
-        util.threeButton();
-        util.addButton();
-        util.fourButton();
-        util.addButton();
-        util.fiveButton();
-        util.addButton();
-        util.sixButton();
-        util.addButton();
-        util.sevenButton();
-        util.addButton();
-        util.eightButton();
-        util.addButton();
-        util.nineButton();
-        String addition = util.printText();
+        util.close();
+        CalcUtilButtons utils = new CalcUtilButtons(baseUrl);
+        utils.zeroButton();
+        utils.MultiplyButton();
+        utils.zeroButton();
+        utils.addButton();
+        utils.oneButton();
+        utils.addButton();
+        utils.twoButton();
+        utils.addButton();
+        utils.threeButton();
+        utils.addButton();
+        utils.fourButton();
+        utils.addButton();
+        utils.fiveButton();
+        utils.addButton();
+        utils.sixButton();
+        utils.addButton();
+        utils.sevenButton();
+        utils.addButton();
+        utils.eightButton();
+        utils.addButton();
+        utils.nineButton();
+        String addition = utils.printText();
         System.out.println("Addition Result"+ addition);
-        driver.close();
+        utils.close();
     }
 }
 
